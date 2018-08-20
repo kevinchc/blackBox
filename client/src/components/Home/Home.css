@@ -1,0 +1,17 @@
+.root{
+    position: relative;
+}
+.Android{
+    position: absolute;
+    top: 70%;
+    left: 10%;
+}
+.Apple{
+    position: absolute;
+    top: 70%;
+    left: 25%;
+}
+
+.Home img{
+    width: 100%;
+}

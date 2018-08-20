@@ -1,12 +1,14 @@
 .root{
     flex-direction: row;
     display: flex;
+    position: sticky;
+    top: 0;
     padding-top: 10px;
+    background: white;
 }
 .logo{
     width: 200px;
     height: 50px;
-
 }
 .nav .dropdown-toggle{
     padding-top: 0;
