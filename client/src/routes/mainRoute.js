@@ -6,11 +6,13 @@ import Store from '../components/Store/Store';
 import Android from '../components/Android/Android';
 import Apple from  '../components/Apple/Apple';
 import Contact from '../components/Contact/Contact';
+
+import '../App.css';
 const MainRoute = (props) => {
     return(
         <BrowserRouter>
-            <div>
-                <Header/>
+            <div className="RootMain">
+                <Header className="Header"/>
                 <Switch>
                     <Route exact path="/home" component={Home}/>
                     <Route path="/store" component= {Store}/>

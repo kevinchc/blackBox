@@ -1,5 +1,6 @@
-.root{
+.rootHome{
     position: relative;
+    background-color: #DAE1E4;
 }
 .Android{
     position: absolute;
@@ -11,7 +12,14 @@
     top: 70%;
     left: 25%;
 }
+.Tittle{
+    position: absolute;
+    top: 40%;
+    left: 14%;
+}
+.subTittle{
 
+}
 .Home img{
     width: 100%;
 }

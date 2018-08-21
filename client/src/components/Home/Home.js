@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Media } from 'reactstrap';
 import Lentes from '../../images/lentes.jpg';
 import Android from '../../images/androide.png';
 import Apple from '../../images/apple.png';
 import './Home.css';
+
+import { Link } from 'react-router-dom';
 
 import {
     Container,
@@ -16,21 +19,35 @@ class Home extends React.Component{
         return(
             <Container>
                 <Row>
-                    <div className="root">
+                    <div className="rootHome">
                         <div className="Home">
                             <img src={Lentes}/>
                         </div>
+                        <div className="Tittle">
+                            <h1>BIENVENIDO</h1>
+                        </div>
+                        <div className="subTittle">
+                        </div>
                         <div className="Android">
-                            <img src={Android}/>
+                            <Link to="/android">
+                                <img src={Android}/>
+                            </Link>
                         </div>
                         <div className="Apple">
-                            <img src={Apple}/>
+                            <Link to="/apple">
+                                <img src={Apple}/>
+                            </Link>
                         </div>
                     </div>
                 </Row>
             </Container>
         )
     }
+}
+
+Container.propTypes = {
+    fluid:  PropTypes.bool
+    // applies .container-fluid class
 }
 
 export default Home;
