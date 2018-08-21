@@ -1,0 +1,29 @@
+.root{
+    flex-direction: row;
+    display: flex;
+    height: auto;
+    padding-top: 20px;
+    background-color: red;
+}
+
+.logo{
+    flex: 1;
+}
+.nav{
+    flex: 4;
+}
+.Nav{
+    display: flex;
+    align-items: left;
+    align-content: left;
+    text-align: left;
+}
+.Nav li{
+    display: inline;
+    float: left;
+    padding-right: 40px;
+}
+.user{
+    flex: 1;
+    text-align: right;
+}
