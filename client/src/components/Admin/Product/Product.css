@@ -1,0 +1,26 @@
+.ImageUploaded {
+    height: 200px;
+    border: 1px solid #DAE1E4;
+}
+.ImageButton{
+    text-align: center;
+}
+.imgPreview{
+    text-align: center;
+    height: 200px;
+    width: 300px;
+}
+.imgPreview img{
+    width: 100%;
+    height: 100%;
+}
+.ButtonSend{
+    display: flex;
+    margin-left: 5px;
+}
+.ButtonSend button{
+    width: 200px;
+    height: 50px;
+    background-color: brown;
+    border: 0;
+}
