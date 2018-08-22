@@ -5,11 +5,7 @@ import Header from '../components/Admin/Header/Header';
 const AdminRoute = (props) => {
     return(
         <BrowserRouter>
-            <div>
-                <header>
-                    <Header/>
-                </header>
-            </div>
+            <Header/>
         </BrowserRouter>
     )
 }

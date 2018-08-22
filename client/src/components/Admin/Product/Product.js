@@ -9,8 +9,17 @@ import {
 
 function Product(props) {
     return(
-        <Container>
-        </Container>
+        <Col sm="4" className="ProductRoot">
+            <Row>
+
+            </Row>
+            <Row className="tittleProduct">
+                <h3>{props.name}</h3>
+            </Row>
+            <Row className="priceProduct">
+                <h3>{props.price}</h3>
+            </Row>
+        </Col>
     )
 }
 

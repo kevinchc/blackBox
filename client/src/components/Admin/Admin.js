@@ -5,9 +5,11 @@ import {
     Col,
     Label,
     Input,
-    Button
+    Button,
+    FormText
 } from 'reactstrap';
 import './Product/Product.css';
+import AddIcon from '@material-ui/icons/Add';
 
 class Admin extends React.Component{
     constructor(props){
@@ -15,10 +17,33 @@ class Admin extends React.Component{
         this.state = {
             file: '',
             imagePreviewUrl: '',
+            detail: [],
+            ...this.emptyDetail()
         };
         this._handleImageChange = this._handleImageChange.bind(this);
         this._handleSubmit = this._handleSubmit.bind(this);
     }
+    emptyDetail = () => {
+        return {
+            description: ""
+        }
+    };
+
+    changeDescription = (e) => {
+        this.setState({description: e.target.value});
+    };
+
+    addDetail = (e) => {
+        console.log(e);
+        this.resetDescription();
+        this.addDetail(this.state)
+
+    };
+
+    resetDescription = () => {
+        this.setState({description: ""})
+    };
+
 
     _handleSubmit(e){
         e.preventDefault();
@@ -39,10 +64,9 @@ class Admin extends React.Component{
         reader.readAsDataURL(file)
     }
 
-
     render(){
 
-        let {imagePreviewUrl} = this.state;
+        let {imagePreviewUrl, description} = this.state;
         let $imagePreview = null;
         if(imagePreviewUrl){
             $imagePreview = (<img src={imagePreviewUrl}/>)
@@ -50,6 +74,9 @@ class Admin extends React.Component{
 
         return(
             <Container>
+                <Row className="TittleProduct">
+                    <h3>CREAR PRODUCTO</h3>
+                </Row>
                 <Row>
                     <Col>
                         <Label for="code">Codigo del Producto</Label>
@@ -68,19 +95,35 @@ class Admin extends React.Component{
                                     </div>
                                 </Row>
                                 <Row>
-                                    <Col sm={{ size: 4, offset:2}}>
+                                    <Col sm={{ size: 4}}>
                                         <input type="file" onChange={this._handleImageChange}/>
-                                    </Col>
-                                </Row>
-                                <Row>
-                                    <Col sm={{ size: 4, offset:2}}>
-                                        <Button type="submit" onClick={this._handleSubmit}>
-                                            Subir
-                                        </Button>
                                     </Col>
                                 </Row>
                             </Col>
                         </Row>
+                    </Col>
+                </Row>
+                <Row className="TittleProduct">
+                    <h3>DETALLES</h3>
+                </Row>
+                <Row className="detailProduct">
+                    <Col sm="2" className="ImageDetail">
+                        <Label for="namedetail"/>
+                        <Input type="text" name="namedetail" id="namedetail"/>
+                    </Col>
+                    <Col sm="8">
+                        <Label for="code">Descripción</Label>
+                        <Input type="textarea"
+                               name="text"
+                               id="exampleText"
+                               placeholder="Agrega alguna descripcion del producto"
+                               value={this.state.description}
+                               onChange={this.changeDescription}/>
+                    </Col>
+                    <Col sm="2" className="addButton">
+                        <Button onClick={this.addDetail}>
+                            <AddIcon />
+                        </Button>
                     </Col>
                 </Row>
                 <Row className="ButtonSend">

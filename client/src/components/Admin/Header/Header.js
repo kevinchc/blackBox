@@ -34,7 +34,7 @@ const styles = theme => ({
         flexGrow: 1,
     },
     appFrame: {
-        height: 430,
+        height: 'auto',
         zIndex: 1,
         overflow: 'hidden',
         position: 'relative',
@@ -116,6 +116,7 @@ class Header extends React.Component{
         auth: true,
         anchorEl: null
     };
+
     handleMenu = (event) => {
         this.setState({anchorEl: event.currentTarget})
     };
