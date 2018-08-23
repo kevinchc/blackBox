@@ -34,9 +34,10 @@ class Admin extends React.Component{
     };
 
     addDetail = (e) => {
-        console.log(e);
+        var detail = new Object();
+        detail.description = this.state.description;
+        console.log(detail);
         this.resetDescription();
-        this.addDetail(this.state)
 
     };
 
@@ -47,7 +48,6 @@ class Admin extends React.Component{
 
     _handleSubmit(e){
         e.preventDefault();
-        console.log(e)
     }
 
     _handleImageChange(e){
@@ -60,7 +60,6 @@ class Admin extends React.Component{
                 imagePreviewUrl:reader.result
             })
         };
-        console.log(reader)
         reader.readAsDataURL(file)
     }
 
